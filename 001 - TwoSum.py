@@ -15,6 +15,22 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 
 """
+from typing import List
 
-def twosum(nums = []):
-    pass
+def twosum(nums = [], target = 0) -> List[int]:
+    found = False
+    if len(nums) == 0:
+        return []
+    
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if j == i:
+                continue
+            
+            if (nums[i] + nums[j]) == target:
+                found = True
+                return [i, j]
+    if found == False:
+        return []
+    
+print(twosum([2,7,11,15], 9))
