@@ -32,5 +32,24 @@ def twosum(nums = [], target = 0) -> List[int]:
                 return [i, j]
     if found == False:
         return []
-    
+
+def twoSumAnotherWay(nums = [], target = 0) -> List[int]:
+    i = 0
+    j = 0
+    while True:
+        if i == j:
+            j += 1
+            continue
+        if j > len(nums) - 1:
+            return []
+        elif (nums[i] + nums[j]) == target:
+            return [i, j]
+        elif j == len(nums) - 1:
+            i += 1
+            j = i + 1
+        elif j != len(nums) - 1:
+            j += 1
+            continue
+
 print(twosum([2,7,11,15], 9))
+print(twoSumAnotherWay([2,7,11,15,17,18], 35))
