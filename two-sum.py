@@ -53,9 +53,16 @@ def twoSumAnotherWay(nums = [], target = 0) -> List[int]:
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for i in range(len(nums)):
-            if nums[i] + nums[i+1] == target:
-                return [i, i+1]
+        somed = True
+        while somed:
+            somed = False
+            for i in range(len(nums)):
+                for j in range(i,len(nums)):
+                    if i == j:
+                        continue
+                    if nums[i] + nums[j] == target:
+                        somed = True
+                        return [i, j]
 
 print(twosum([2,7,11,15], 9))
 print(twoSumAnotherWay([2,7,11,15,17,18], 35))
