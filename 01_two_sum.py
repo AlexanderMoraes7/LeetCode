@@ -17,22 +17,6 @@ Output: [0,1]
 """
 from typing import List
 
-def twosum(nums = [], target = 0) -> List[int]:
-    found = False
-    if len(nums) == 0:
-        return []
-    
-    for i in range(len(nums)):
-        for j in range(len(nums)):
-            if j == i:
-                continue
-            
-            if (nums[i] + nums[j]) == target:
-                found = True
-                return [i, j]
-    if found == False:
-        return []
-
 def twoSumAnotherWay(nums = [], target = 0) -> List[int]:
     i = 0
     j = 0
@@ -64,5 +48,7 @@ class Solution:
                         somed = True
                         return [i, j]
 
-print(twosum([2,7,11,15], 9))
-print(twoSumAnotherWay([2,7,11,15,17,18], 35))
+s = Solution()
+print(s.twoSum([2,7,11,15], 9))         # Output: [0,1]
+print(s.twoSum([3,2,4], 6))             # Output: [1,2]
+print(s.twoSum([3,3], 6))               # Output: [0,1]
